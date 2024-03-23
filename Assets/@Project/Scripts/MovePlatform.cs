@@ -1,38 +1,38 @@
 ﻿using UnityEngine;
 
-// 動く床を制御するスクリプト
+// 控制移动平台的脚本
 public class MovePlatform : MonoBehaviour
 {
-	// 動く床の移動距離
-	public Vector3 m_distance = new Vector3( 5, 0, 0 );
+	// 移动平台的移动距离
+	public Vector3 m_distance = new Vector3(5, 0, 0);
 
-	// 動く床の移動速度
+	// 移动平台的移动速度
 	public float m_speed = 0.5f;
 
-	// 開始位置
+	// 开始位置
 	private Vector3 m_startPosition;
 
-	// 終了位置
+	// 结束位置
 	private Vector3 m_endPosition;
 
-	// シーンが開始する時に呼び出される関数
+	// 场景开始时调用的函数
 	private void Awake()
 	{
-		// 現在位置を開始位置として記憶する
+		// 记录当前位置作为开始位置
 		m_startPosition = transform.localPosition;
 
-		// 開始位置と移動距離から終了位置を設定する
+		// 根据开始位置和移动距离设置结束位置
 		m_endPosition = m_startPosition + m_distance;
 	}
 
-	// 毎フレーム呼び出される関数
+	// 每帧调用的函数
 	private void Update()
 	{
-		// 現在の位置を計算する
-		var t           = Mathf.PingPong( Time.time * m_speed, 1 );
-		var newPosition = Vector3.Lerp( m_startPosition, m_endPosition, t );
+		// 计算当前位置
+		var t = Mathf.PingPong(Time.time * m_speed, 1);
+		var newPosition = Vector3.Lerp(m_startPosition, m_endPosition, t);
 
-		// 現在の位置を反映する
+		// 更新当前位置
 		transform.localPosition = newPosition;
 	}
 }

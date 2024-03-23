@@ -1,21 +1,21 @@
 ﻿using UnityEngine;
 
-// 背景を制御するスクリプト
+// 控制背景的脚本
 public class Background : MonoBehaviour
 {
-	// 背景がスクロールする速さ
-	public Vector2 m_speed;
+    // 背景滚动的速度
+    public Vector2 m_speed;
 
-	// 毎フレーム呼び出される関数
-	private void Update()
-	{
-		// 背景のスプライトを表示する機能を取得する
-		var spriteRenderer = GetComponent<SpriteRenderer>();
+    // 每帧调用的函数
+    private void Update()
+    {
+        // 获取背景的精灵渲染器组件
+        var spriteRenderer = GetComponent<SpriteRenderer>();
 
-		// 背景のテクスチャを表示するマテリアルを取得する
-		var material = spriteRenderer.material;
+        // 获取显示背景纹理的材质
+        var material = spriteRenderer.material;
 
-		// 背景のテクスチャをスクロールする
-		material.mainTextureOffset += m_speed * Time.deltaTime;
-	}
+        // 滚动背景的纹理
+        material.mainTextureOffset += m_speed * Time.deltaTime;
+    }
 }
