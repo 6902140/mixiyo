@@ -9,13 +9,13 @@ public class Goal : MonoBehaviour
 	// 是否完成目标
 	private bool m_isGoal;
 
-	// 他のオブジェクトと当たった時に呼び出される関数
+	// 当与其他对象发生碰撞时调用的函数
 	private void OnTriggerEnter2D(Collider2D other)
 	{
-		// まだゴールしておらず
+		// 如果尚未完成目标
 		if (!m_isGoal)
 		{
-			// 名前に「Player」が含まれるオブジェクトと当たったら
+			// 如果与名称包含"Player"的对象发生碰撞
 			if (other.name.Contains("Player"))
 			{
 				// 在场景中查找 CameraShaker 脚本
