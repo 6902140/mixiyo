@@ -13,6 +13,11 @@ public class Player : MonoBehaviour
 	// 受伤时播放的音效
 	public AudioClip m_hitClip;
 
+	public string HORIZONTAL;
+	public string VERTICAL;
+	public string JUMP;
+	public string DASH;
+
 	// 是否跳过跳跃音效
 	public bool IsSkipJumpSe;
 
@@ -61,6 +66,11 @@ public class Player : MonoBehaviour
 
 		// 注册跳跃事件的函数
 		motor.onJump += OnJump;
+		string name_ = transform.name;
+		HORIZONTAL = PC2D.Input.HORIZONTAL + name[name.Length - 1];
+		VERTICAL = PC2D.Input.VERTICAL + name[name.Length - 1];
+		JUMP = PC2D.Input.JUMP + name[name.Length - 1];
+		DASH = PC2D.Input.DASH + name[name.Length - 1];
 	}
 
 	// 当跳跃时调用的函数

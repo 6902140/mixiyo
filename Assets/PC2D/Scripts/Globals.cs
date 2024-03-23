@@ -5,10 +5,10 @@ namespace PC2D
     public class Input
     {
 
-        public const string HORIZONTAL = "Horizontal1";
-        public const string VERTICAL = "Vertical1";
-        public const string JUMP = "Jump1";
-        public const string DASH = "Fire1";
+        public const string HORIZONTAL = "Horizontal";
+        public const string VERTICAL = "Vertical";
+        public const string JUMP = "Jump";
+        public const string DASH = "Fire";
     }
 
     public class Globals
