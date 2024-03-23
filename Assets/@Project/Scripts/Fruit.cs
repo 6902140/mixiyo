@@ -1,47 +1,45 @@
 ﻿using UnityEngine;
 
-// フルーツを制御するスクリプト
+// 控制水果的脚本
 public class Fruit : MonoBehaviour
 {
-	// 獲得演出のプレハブ
+	// 获取的特效预制体
 	public GameObject m_collectedPrefab;
 
-	// フルーツを取った時に再生する SE
+	// 获取水果时播放的音效
 	public AudioClip m_collectedClip;
 
-	// 他のオブジェクトと当たった時に呼び出される関数
-	private void OnTriggerEnter2D( Collider2D other )
+	// 当与其他对象发生碰撞时调用的函数
+	private void OnTriggerEnter2D(Collider2D other)
 	{
-		// 名前に「Player」が含まれるオブジェクトと当たったら
-		if ( other.name.Contains( "Player" ) )
+		// 如果与名称包含"Player"的对象发生碰撞
+		if (other.name.Contains("Player"))
 		{
-			// 獲得演出のオブジェクトを作成する
-			var collected = Instantiate
-			(
+			// 创建获取特效对象
+			var collected = Instantiate(
 				m_collectedPrefab,
 				transform.position,
 				Quaternion.identity
 			);
 
-			// 獲得演出のオブジェクトからアニメーターの情報を取得する
+			// 获取获取特效对象的动画组件
 			var animator = collected.GetComponent<Animator>();
 
-			// 現在再生中のアニメーションの情報を取得する
-			var info = animator.GetCurrentAnimatorStateInfo( 0 );
+			// 获取当前播放的动画状态信息
+			var info = animator.GetCurrentAnimatorStateInfo(0);
 
-			// 現在再生中のアニメーションの再生時間（秒）を取得する
+			// 获取当前播放动画的时长（秒）
 			var time = info.length;
 
-			// アニメーションの再生が完了したら
-			// 獲得演出を削除するように登録する
-			Destroy( collected, time );
+			// 当动画播放完成时，注册销毁获取特效对象的函数
+			Destroy(collected, time);
 
-			// 自分自身を削除する
-			Destroy( gameObject );
+			// 销毁自身对象
+			Destroy(gameObject);
 
-			// フルーツを取った時の SE を再生する
+			// 播放获取水果的音效
 			var audioSource = FindObjectOfType<AudioSource>();
-			audioSource.PlayOneShot( m_collectedClip );
+			audioSource.PlayOneShot(m_collectedClip);
 		}
 	}
 }
