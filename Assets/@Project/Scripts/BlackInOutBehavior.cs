@@ -17,7 +17,7 @@ public class BlackInOutBehavior : MonoBehaviour
 
     void Update()
     {
-        if (isReady && Input.anyKey){
+        if (isReady && Input.anyKeyDown){
             StartCoroutine(FadeOut());
         }
     }
@@ -31,24 +31,25 @@ public class BlackInOutBehavior : MonoBehaviour
             //Debug.Log(Time.time);
             alpha -= Time.deltaTime;
             image.color = new Color(0, 0, 0, alpha);
-            yield return new WaitForSeconds(Time.deltaTime);
+            yield return null;
         }
-
+        Debug.Log(Time.time);
         isReady = true;
     }
 
     IEnumerator FadeOut()
     {
         alpha = 0;
-
+        // float t = Time.time;
         while (alpha < 1)
         {
-            //Debug.Log(Time.time);
-            alpha += Time.deltaTime;
+            // Debug.Log(Time.deltaTime);
+            alpha += Time.deltaTime * 0.8f;
+            // Debug.Log(alpha);
             image.color = new Color(0, 0, 0, alpha);
-            yield return new WaitForSeconds(0.1f);
+            yield return null;
         }
-
+        // Debug.Log(Time.time - t);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
