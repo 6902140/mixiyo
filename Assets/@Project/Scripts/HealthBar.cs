@@ -4,8 +4,7 @@ public class HealthBar : MonoBehaviour
 {
     public Image mask;
     float originalSize;
-
-    void Start()
+    void Awake()
     {
         originalSize = mask.rectTransform.rect.width;
     }
