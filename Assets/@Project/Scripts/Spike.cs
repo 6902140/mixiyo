@@ -1,18 +1,18 @@
 ﻿using UnityEngine;
 
-// 針を制御するスクリプト
+// 控制针的脚本
 public class Spike : MonoBehaviour
 {
-	// 他のオブジェクトと当たった時に呼び出される関数
-	private void OnTriggerEnter2D( Collider2D other )
+	// 当与其他对象发生碰撞时调用的函数
+	private void OnTriggerEnter2D(Collider2D other)
 	{
-		// 名前に「Player」が含まれるオブジェクトと当たったら
-		if ( other.name.Contains( "Player" ) )
+		// 如果与名字中包含"Player"的对象发生碰撞
+		if (other.name.Contains("Player"))
 		{
-			// プレイヤーから Player スクリプトを取得する
+			// 获取玩家上的Player脚本
 			var player = other.GetComponent<Player>();
 
-			// プレイヤーがやられた時に呼び出す関数を実行する
+			// 调用玩家的死亡函数
 			player.Dead();
 		}
 	}

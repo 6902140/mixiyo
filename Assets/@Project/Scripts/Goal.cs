@@ -1,41 +1,41 @@
 ﻿using UnityEngine;
 
-// ゴールを制御するスクリプト
+// 控制目标的脚本
 public class Goal : MonoBehaviour
 {
-	// ゴールした時に再生する SE
+	// 目标完成时播放的音效
 	public AudioClip m_goalClip;
 
-	// ゴールしたかどうか
+	// 是否完成目标
 	private bool m_isGoal;
 
-	// 他のオブジェクトと当たった時に呼び出される関数
-	private void OnTriggerEnter2D( Collider2D other )
+	// 当与其他对象发生碰撞时调用的函数
+	private void OnTriggerEnter2D(Collider2D other)
 	{
-		// まだゴールしておらず
-		if ( !m_isGoal )
+		// 如果尚未完成目标
+		if (!m_isGoal)
 		{
-			// 名前に「Player」が含まれるオブジェクトと当たったら
-			if ( other.name.Contains( "Player" ) )
+			// 如果与名称包含"Player"的对象发生碰撞
+			if (other.name.Contains("Player"))
 			{
-				// シーンに存在する CameraShaker スクリプトを検索する
+				// 在场景中查找 CameraShaker 脚本
 				var cameraShake = FindObjectOfType<CameraShaker>();
 
-				// CameraShaker を使用してカメラを揺らす
+				// 使用 CameraShaker 震动相机
 				cameraShake.Shake();
 
-				// 何回もゴールしないように、ゴールしたことを記憶しておく
+				// 记录已完成目标，以防止重复触发
 				m_isGoal = true;
 
-				// ゴールのアニメーターを取得する
+				// 获取目标的动画组件
 				var animator = GetComponent<Animator>();
 
-				// ゴールした時のアニメーションを再生する
-				animator.Play( "Pressed" );
+				// 播放目标完成时的动画
+				animator.Play("Pressed");
 
-				// ゴールした時の SE を再生する
+				// 播放目标完成时的音效
 				var audioSource = FindObjectOfType<AudioSource>();
-				audioSource.PlayOneShot( m_goalClip );
+				audioSource.PlayOneShot(m_goalClip);
 			}
 		}
 	}
