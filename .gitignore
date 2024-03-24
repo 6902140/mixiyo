@@ -36,3 +36,7 @@ sysinfo.txt
 *.apk
 *.symbols.zip
 /Game/*
+
+# macOS files
+.DS_Store
+**/.DS_Store
