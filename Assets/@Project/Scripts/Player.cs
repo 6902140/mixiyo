@@ -13,6 +13,8 @@ public class Player : MonoBehaviour
 	// 受伤时播放的音效
 	public AudioClip m_hitClip;
 
+	public HealthBar healthBar;
+
 	public string HORIZONTAL;
 	public string VERTICAL;
 	public string JUMP;
@@ -21,6 +23,13 @@ public class Player : MonoBehaviour
 	// 是否跳过跳跃音效
 	public bool IsSkipJumpSe;
 
+	public int health = 3;
+	private int maxHealth = 5;
+
+	void Start()
+	{
+		healthBar.SetValue(health*1.0f/maxHealth);
+	}
 	// 玩家受伤时调用的函数
 	public void Dead()
 	{
@@ -28,28 +37,41 @@ public class Player : MonoBehaviour
 		// 如果使用Destroy函数直接删除玩家对象
 		// 将无法调用OnRetry函数
 		// 因此使用SetActive函数将其设置为不可见
-		gameObject.SetActive(false);
 
 		// 在场景中查找 CameraShaker 脚本
 		var cameraShake = FindObjectOfType<CameraShaker>();
-
 		// 使用 CameraShaker 震动相机
-
 		cameraShake.Shake();
-
-		// 2秒后重新开始游戏
-		Invoke("OnRetry", 2);
-
-		// 生成玩家受伤动画的对象
-		Instantiate(
-			m_playerHitPrefab,
-			transform.position,
-			Quaternion.identity
-		);
-
 		// 播放受伤音效
 		var audioSource = FindObjectOfType<AudioSource>();
 		audioSource.PlayOneShot(m_hitClip);
+
+		health--;
+		healthBar.SetValue(health*1.0f/maxHealth);
+		if(health <= 0)
+		{
+			gameObject.SetActive(false);
+			// 生成玩家受伤动画的对象
+			Instantiate(
+				m_playerHitPrefab,
+				transform.position,
+				Quaternion.identity
+			);
+
+
+			// 2秒后重新开始游戏
+			Invoke("OnRetry", 2);
+		}
+	}
+
+	public void addHealth()
+	{
+		if(health >= maxHealth)
+		{
+			return;
+		}
+		health++;
+		healthBar.SetValue(health*1.0f/maxHealth);
 	}
 
 	// 在重新开始游戏时调用的函数
@@ -67,12 +89,11 @@ public class Player : MonoBehaviour
 
 		// 注册跳跃事件的函数
 		motor.onJump += OnJump;
-		// 判断当前object名字是否以1或2结尾，是的话根据1或2赋予第1或第2套键位，否则默认是第一套键位
-		char player_key_seq = ('1' <= name[name.Length - 1] && name[name.Length - 1] <= '2') ? name[name.Length - 1] : '1'; 
-		HORIZONTAL = PC2D.Input.HORIZONTAL + player_key_seq;
-		VERTICAL = PC2D.Input.VERTICAL + player_key_seq;
-		JUMP = PC2D.Input.JUMP + player_key_seq;
-		DASH = PC2D.Input.DASH + player_key_seq;
+		string name_ = transform.name;
+		HORIZONTAL = PC2D.Input.HORIZONTAL + name[name.Length - 1];
+		VERTICAL = PC2D.Input.VERTICAL + name[name.Length - 1];
+		JUMP = PC2D.Input.JUMP + name[name.Length - 1];
+		DASH = PC2D.Input.DASH + name[name.Length - 1];
 	}
 
 	// 当跳跃时调用的函数
