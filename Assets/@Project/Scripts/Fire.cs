@@ -5,7 +5,7 @@ public class Fire : MonoBehaviour
 {
 	// 当与其他对象发生碰撞时调用的函数
 	// 无敌帧时间
-	private float invincibleTime = 0.5f;
+	private float invincibleTime = 0.7f;
 	private float lastHitTime = 0.0f;
 	private void OnTriggerStay2D(Collider2D other)
 	{
