@@ -1,10 +1,14 @@
-# 红与蓝之舞 :):):)  A Dance of Red and Blue
-
-西安交通大学 2024 春 unity游戏开发 **米嘻游** :panda_face:   作品
+# 红与蓝之舞 :wink::wink::wink:  A Dance of Red and Blue
 
 <img src="./resources/logo.jpg.png" alt="Logo" style="width:50%;">
 
+西安交通大学 2024 春 unity游戏开发 **米嘻游** :panda_face:   作品
 
+WebGL [部署地址](https://6902140.github.io/redblue.github.io/) <-点击即可在线体验
+
+
+
+![alt text](./resources/image.png)
 
 ---------------------
 ### PART1 游戏背景介绍
@@ -28,8 +32,8 @@
 
 鸣谢：
 
-指导老师： [Mr.Kelvin Sung, Professor](https://www.uwb.edu/stem/faculty/css-faculty/ksung)
+- 指导老师： [Mr.Kelvin Sung, Professor](https://www.uwb.edu/stem/faculty/css-faculty/ksung)
 
-素材来源：https://otologic.jp/
+- 素材来源：https://otologic.jp/
 
-创意来源：[森林冰火人](https://www.i-gamer.net/site/3086.html) , [冰与火之舞](https://store.steampowered.com/app/977950/_A_Dance_of_Fire_and_Ice/?l=schinese)
+- 创意来源：[森林冰火人](https://www.i-gamer.net/site/3086.html) , [冰与火之舞](https://store.steampowered.com/app/977950/_A_Dance_of_Fire_and_Ice/?l=schinese)
