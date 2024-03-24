@@ -40,6 +40,9 @@ public class Fruit : MonoBehaviour
 			// 播放获取水果的音效
 			var audioSource = FindObjectOfType<AudioSource>();
 			audioSource.PlayOneShot(m_collectedClip);
+
+			var player = other.GetComponent<Player>();
+			player.addHealth();
 		}
 	}
 }

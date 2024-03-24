@@ -1,7 +1,31 @@
 fileFormatVersion: 2
-guid: a62b519fe11315548943ee9dab8f974d
+guid: 82785e9e19b9ae3439814580a5c97e7d
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -6413723104087012207
+    second: End (Pressed) (64x64)_0
+  - first:
+      213: 3929474280128384605
+    second: End (Pressed) (64x64)_1
+  - first:
+      213: 1587867963335433236
+    second: End (Pressed) (64x64)_2
+  - first:
+      213: -5485141715290898936
+    second: End (Pressed) (64x64)_3
+  - first:
+      213: -2126709872511700890
+    second: End (Pressed) (64x64)_4
+  - first:
+      213: -909184209231543298
+    second: End (Pressed) (64x64)_5
+  - first:
+      213: 1599969876799240324
+    second: End (Pressed) (64x64)_6
+  - first:
+      213: 1190070087064070019
+    second: End (Pressed) (64x64)_7
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -33,7 +57,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -70,7 +94,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -82,7 +106,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -94,7 +118,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -106,7 +130,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -117,13 +141,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Hit (16x32)_0
+      name: End (Pressed) (64x64)_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 16
-        height: 32
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,20 +155,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9d850d0d2d6122a439a0562433737f0c
-      internalID: -590676181
+      spriteID: 9bf7c7d3c4979d943b17435a3e4548d4
+      internalID: -6413723104087012207
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hit (16x32)_1
+      name: End (Pressed) (64x64)_1
       rect:
         serializedVersion: 2
-        x: 16
+        x: 64
         y: 0
-        width: 16
-        height: 32
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,20 +176,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 858ae686c435c9543b2f812add866cb2
-      internalID: -694760330
+      spriteID: c544ae2e642a4134ab135aba675c99c4
+      internalID: 3929474280128384605
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hit (16x32)_2
+      name: End (Pressed) (64x64)_2
       rect:
         serializedVersion: 2
-        x: 32
+        x: 128
         y: 0
-        width: 16
-        height: 32
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -173,20 +197,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c85ef9584e792e24ca65488c88a44e24
-      internalID: -979867348
+      spriteID: 3ec560070c5f8464da620a9ff482b0f0
+      internalID: 1587867963335433236
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hit (16x32)_3
+      name: End (Pressed) (64x64)_3
       rect:
         serializedVersion: 2
-        x: 48
+        x: 192
         y: 0
-        width: 16
-        height: 32
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -194,8 +218,92 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8f02a977436a0a548a505d6e3b82e9f6
-      internalID: 49606839
+      spriteID: 2f0847953d8f2b743ba7bf8b8b019666
+      internalID: -5485141715290898936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: End (Pressed) (64x64)_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43e66c875d0e89d499878d9b24d9cd40
+      internalID: -2126709872511700890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: End (Pressed) (64x64)_5
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d63766b3ae6b5214e94f409c0e4c51eb
+      internalID: -909184209231543298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: End (Pressed) (64x64)_6
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34df0b7e93a4c7a4ab31b2a9c1d1af92
+      internalID: 1599969876799240324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: End (Pressed) (64x64)_7
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f4e80ac7cfad974584278f0def4f944
+      internalID: 1190070087064070019
       vertices: []
       indices: 
       edges: []
@@ -211,10 +319,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Hit (16x32)_0: -590676181
-      Hit (16x32)_1: -694760330
-      Hit (16x32)_2: -979867348
-      Hit (16x32)_3: 49606839
+      End (Pressed) (64x64)_0: -6413723104087012207
+      End (Pressed) (64x64)_1: 3929474280128384605
+      End (Pressed) (64x64)_2: 1587867963335433236
+      End (Pressed) (64x64)_3: -5485141715290898936
+      End (Pressed) (64x64)_4: -2126709872511700890
+      End (Pressed) (64x64)_5: -909184209231543298
+      End (Pressed) (64x64)_6: 1599969876799240324
+      End (Pressed) (64x64)_7: 1190070087064070019
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
