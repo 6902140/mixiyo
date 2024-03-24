@@ -28,6 +28,8 @@ public class Player : MonoBehaviour
 		// シーンに存在する CameraShaker スクリプトを検索する
 		var cameraShake = FindObjectOfType<CameraShaker>();
 
+		Debug.Log( cameraShake );
+
 		// CameraShaker を使用してカメラを揺らす
 		cameraShake.Shake();
 
