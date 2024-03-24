@@ -66,11 +66,12 @@ public class Player : MonoBehaviour
 
 		// 注册跳跃事件的函数
 		motor.onJump += OnJump;
-		string name_ = transform.name;
-		HORIZONTAL = PC2D.Input.HORIZONTAL + name[name.Length - 1];
-		VERTICAL = PC2D.Input.VERTICAL + name[name.Length - 1];
-		JUMP = PC2D.Input.JUMP + name[name.Length - 1];
-		DASH = PC2D.Input.DASH + name[name.Length - 1];
+		// 判断当前object名字是否以1或2结尾，是的话根据1或2赋予第1或第2套键位，否则默认是第一套键位
+		char player_key_seq = ('1' <= name[name.Length - 1] && name[name.Length - 1] <= '2') ? name[name.Length - 1] : '1'; 
+		HORIZONTAL = PC2D.Input.HORIZONTAL + player_key_seq;
+		VERTICAL = PC2D.Input.VERTICAL + player_key_seq;
+		JUMP = PC2D.Input.JUMP + player_key_seq;
+		DASH = PC2D.Input.DASH + player_key_seq;
 	}
 
 	// 当跳跃时调用的函数
