@@ -55,6 +55,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6820004337351981071, guid: 0685b67e501acc44bbc45360fd793738,
         type: 3}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 4800085399149575160}
+    - target: {fileID: 6820004337351981071, guid: 0685b67e501acc44bbc45360fd793738,
+        type: 3}
       propertyPath: m_playerHitPrefab
       value: 
       objectReference: {fileID: 2011833101734743391, guid: af785001d95a8e04ab6aeb9801446f34,
