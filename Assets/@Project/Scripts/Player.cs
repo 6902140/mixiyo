@@ -79,6 +79,7 @@ public class Player : MonoBehaviour
 	{
 		// 重新加载当前场景以重新开始游戏
 		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+		Goal.m_goalCount = 2;
 	}
 
 	// 在场景开始时调用的函数
