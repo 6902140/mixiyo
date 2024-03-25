@@ -33,7 +33,7 @@ public class BlackInOutBehavior : MonoBehaviour
             image.color = new Color(0, 0, 0, alpha);
             yield return null;
         }
-        Debug.Log(Time.time);
+        // Debug.Log(Time.time);
         isReady = true;
     }
 
