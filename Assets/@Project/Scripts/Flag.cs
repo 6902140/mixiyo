@@ -14,17 +14,28 @@ public class Flag : MonoBehaviour
 		if ((playerOne || playerTwo)  && other.name.Contains("Player"))
 		{
             if(other.name.Contains("Player1")){
+                if(playerOne){
+                    var player = other.GetComponent<Player>();
+                    var motor = player.GetComponent<PlatformerMotor2D>();
+                    motor.enableWallJumps = true;
+                    motor.enableWallSticks = true;
+                    motor.enableWallSlides = true;
+                    var audioSource = FindObjectOfType<AudioSource>();
+                    audioSource.PlayOneShot(flagClip);
+                }
                 playerOne = false;
             }else if (other.name.Contains("Player2")){
+                if(playerTwo){
+                    var player = other.GetComponent<Player>();
+                    var motor = player.GetComponent<PlatformerMotor2D>();
+                    motor.enableWallJumps = true;
+                    motor.enableWallSticks = true;
+                    motor.enableWallSlides = true;
+                    var audioSource = FindObjectOfType<AudioSource>();
+                    audioSource.PlayOneShot(flagClip);
+                }
                 playerTwo = false;
             }
-			var player = other.GetComponent<Player>();
-            var motor = player.GetComponent<PlatformerMotor2D>();
-            motor.enableWallJumps = true;
-            motor.enableWallSticks = true;
-            motor.enableWallSlides = true;
-            var audioSource = FindObjectOfType<AudioSource>();
-			audioSource.PlayOneShot(flagClip);
             if(!playerOne && !playerTwo)
             {
                 Animator animator = GetComponent<Animator>();
