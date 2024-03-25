@@ -6891,6 +6891,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player2
       objectReference: {fileID: 0}
+    - target: {fileID: 8508620509100498105, guid: bbf77662b3671614685f84a974250374,
+        type: 3}
+      propertyPath: numOfAirJumps
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8810,7 +8815,7 @@ PrefabInstance:
     - target: {fileID: 8508620509100498105, guid: 40fb521ed6a358f4eb16eec0c8fa313b,
         type: 3}
       propertyPath: numOfAirJumps
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
