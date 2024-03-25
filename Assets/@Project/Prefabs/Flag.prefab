@@ -166,3 +166,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c2854bfd957fcd4c849494b80c2502a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flagClip: {fileID: 8300000, guid: 379631f24c8191b40bce2a0bdc16a0cc, type: 3}
