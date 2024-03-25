@@ -134,7 +134,7 @@ public class PlatformerMotor2D : MonoBehaviour
     /// <summary>
     /// Number of air jumps allowed.
     /// </summary>
-    public int numOfAirJumps = 1;
+    public int numOfAirJumps = 0;
 
     /// <summary>
     /// The amount of time once the motor has left an environment that a jump will be allowed.
