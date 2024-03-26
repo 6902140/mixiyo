@@ -9,10 +9,10 @@ EditorBuildSettings:
     path: Assets/@Project/Scenes/StartScene.unity
     guid: d27cd623b33919340b95e212874bb1c0
   - enabled: 1
-    path: Assets/@Project/Scenes/Stage3.unity
+    path: Assets/@Project/Scenes/Stage2.unity
     guid: 9df4181e4810a482a9c026e1d4bf9c52
   - enabled: 1
-    path: Assets/@Project/Scenes/Stage2.unity
+    path: Assets/@Project/Scenes/Stage1.unity
     guid: 36660ffa6a8914f17989209a9e2a026b
   - enabled: 0
     path: Assets/@Project/Scenes/Stage1.unity
@@ -21,3 +21,4 @@ EditorBuildSettings:
     path: Assets/@Project/Scenes/TestScene.unity
     guid: f71ede2347478614792cc18307f4894d
   m_configObjects: {}
+  m_UseUCBPForAssetBundles: 0

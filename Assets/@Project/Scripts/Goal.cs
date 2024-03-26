@@ -10,7 +10,7 @@ public class Goal : MonoBehaviour
 	// 是否完成目标
 	private bool m_isGoal;
 
-	public static int m_goalCount = 2;
+	private static int m_goalCount = 2;
 
 	// 当与其他对象发生碰撞时调用的函数
 	private void OnTriggerEnter2D(Collider2D other)
@@ -45,7 +45,7 @@ public class Goal : MonoBehaviour
 				if(m_goalCount == 0)
 				{
 					// 加载下一个场景
-					SceneManager.LoadScene("StartScene");
+					SceneManager.LoadScene("Scene2");
 				}
 			}
 		}

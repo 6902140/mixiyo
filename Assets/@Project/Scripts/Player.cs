@@ -25,12 +25,22 @@ public class Player : MonoBehaviour
 
 	public int health = 3;
 	private int maxHealth = 5;
-
+	private float timer;
+	public bool dead=false;
 	void Start()
 	{
 		healthBar.SetValue(health*1.0f/maxHealth);
+		timer = Time.time;
 	}
 	// 玩家受伤时调用的函数
+	public void Hit()
+	{
+	    if(Time.time-timer>1f&&dead==false)
+		{
+			Dead();
+			timer = Time.time;
+		}
+	}
 	public void Dead()
 	{
 		// 将玩家对象设置为不可见
@@ -50,6 +60,7 @@ public class Player : MonoBehaviour
 		healthBar.SetValue(health*1.0f/maxHealth);
 		if(health <= 0)
 		{
+			dead=true;
 			gameObject.SetActive(false);
 			// 生成玩家受伤动画的对象
 			Instantiate(
@@ -79,7 +90,6 @@ public class Player : MonoBehaviour
 	{
 		// 重新加载当前场景以重新开始游戏
 		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-		Goal.m_goalCount = 2;
 	}
 
 	// 在场景开始时调用的函数
