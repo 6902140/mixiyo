@@ -15,4 +15,15 @@ public class Door : MonoBehaviour
     {
         
     }
+
+    public void Open()
+    {
+        Animator animator = GetComponent<Animator>();
+        animator.Play("Off");
+        Invoke("destroy", 0.5f);
+    }
+
+    void destroy(){
+        Destroy(gameObject);
+    }
 }

@@ -124,6 +124,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pink
       objectReference: {fileID: 0}
+    - target: {fileID: 6820004337988320350, guid: 0685b67e501acc44bbc45360fd793738,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1.6349261
+      objectReference: {fileID: 0}
+    - target: {fileID: 6820004337988320350, guid: 0685b67e501acc44bbc45360fd793738,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: -0.132537
+      objectReference: {fileID: 0}
     - target: {fileID: 6820004337991441212, guid: 0685b67e501acc44bbc45360fd793738,
         type: 3}
       propertyPath: staticEnvLayerMask.m_Bits

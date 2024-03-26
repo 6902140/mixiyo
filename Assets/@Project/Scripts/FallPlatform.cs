@@ -1,4 +1,4 @@
-﻿    using UnityEngine;
+﻿using UnityEngine;
 
 // 控制下落平台的脚本
 public class FallPlatform : MonoBehaviour

@@ -15,6 +15,11 @@ public class Arrow : MonoBehaviour
 		// 如果与名称包含"Player"的对象发生碰撞
 		if (other.name.Contains("Player"))
 		{
+            var player = other.GetComponent<Player>();
+            var motor = player.GetComponent<PlatformerMotor2D>();
+            if(motor.numOfAirJumps != 0)
+                return;
+
 			// 创建获取特效对象
 			var collected = Instantiate(
 				m_collectedPrefab,
@@ -41,8 +46,6 @@ public class Arrow : MonoBehaviour
 			var audioSource = FindObjectOfType<AudioSource>();
 			audioSource.PlayOneShot(m_collectedClip);
 
-            var player = other.GetComponent<Player>();
-            var motor = player.GetComponent<PlatformerMotor2D>();
             motor.numOfAirJumps = 1;
 		}
 	}

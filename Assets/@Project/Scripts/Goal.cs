@@ -12,6 +12,14 @@ public class Goal : MonoBehaviour
 
 	public static int m_goalCount = 2;
 
+	void Update()
+	{
+		if (Input.GetKeyDown(KeyCode.O))
+		{
+			SceneManager.LoadScene((SceneManager.GetActiveScene().buildIndex + 1)%4);
+		}
+	}
+
 	// 当与其他对象发生碰撞时调用的函数
 	private void OnTriggerEnter2D(Collider2D other)
 	{
@@ -45,7 +53,8 @@ public class Goal : MonoBehaviour
 				if(m_goalCount == 0)
 				{
 					// 加载下一个场景
-					SceneManager.LoadScene("StartScene");
+					m_goalCount = 2;
+					SceneManager.LoadScene((SceneManager.GetActiveScene().buildIndex + 1)%4);
 				}
 			}
 		}

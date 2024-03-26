@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Chief : MonoBehaviour
 {
@@ -15,16 +16,29 @@ public class Chief : MonoBehaviour
     };
     States state;
     Vector3 direction;
-    GameObject player;
+    GameObject player1;
+    GameObject player2;
     CameraSupport cameraSupport;
     float speed;
     float stateTimer=0f;
     float throwTimer=0f;
     Vector3 idlepos;
     float throwRotation;
+    float health=1f;
+    public Slider slider;
+    public void Hit()
+    {
+        health-=0.1f;
+        slider.value=health;
+        if(health<=0f)
+        {
+            Destroy(gameObject);
+        }
+    }
     void Start()
     {
-        player=GameObject.Find("Player");
+        player1=GameObject.Find("Player1");
+        player2=GameObject.Find("Player2");
         cameraSupport=Camera.main.GetComponent<CameraSupport>();
         idlepos.x = cameraSupport.GetWorldBound().min.x + cameraSupport.GetWorldBound().size.x*0.1f+Random.value * cameraSupport.GetWorldBound().size.x*0.8f;
         idlepos.y = cameraSupport.GetWorldBound().min.y + cameraSupport.GetWorldBound().size.y*0.5f+Random.value * cameraSupport.GetWorldBound().size.y*0.4f;
@@ -37,9 +51,17 @@ public class Chief : MonoBehaviour
 
     void Update()
     {
+        if(player1.GetComponent<Player>().dead)
+            return;
+        if(player2.GetComponent<Player>().dead)
+            return;
+        if(Vector3.Distance(player1.transform.position,transform.position)<1.3f)
+            player1.GetComponent<Player>().Hit();
+        if(Vector3.Distance(player2.transform.position,transform.position)<1.3f)
+            player2.GetComponent<Player>().Hit();
         if(state==States.Idle)
         {
-            if(Time.time-stateTimer>5f)
+            if(Time.time-stateTimer>8f)
                 UpdateState();
             transform.position += Time.smoothDeltaTime * speed * direction;
             if(direction.x>=0f)
@@ -55,7 +77,7 @@ public class Chief : MonoBehaviour
         }
         if(state==States.Thrust)
         {
-            if(Time.time-stateTimer>5f)
+            if(Time.time-stateTimer>8f)
                 UpdateState();
             transform.position += Time.smoothDeltaTime * speed * direction;
             if(direction.x>=0f)
@@ -65,7 +87,15 @@ public class Chief : MonoBehaviour
             Bounds myBound = GetComponent<Renderer>().bounds;
             CameraSupport.WorldBoundStatus status = cameraSupport.CollideWorldBound(myBound);
             if (status != CameraSupport.WorldBoundStatus.Inside)
-                direction = (player.transform.position - transform.position).normalized;
+            {
+                var cameraShake = FindObjectOfType<CameraShaker>();
+                // 使用 CameraShaker 震动相机
+                cameraShake.Shake();
+                if(Random.value>0.5)
+                    direction = (player1.transform.position - transform.position).normalized;
+                else
+                    direction = (player2.transform.position - transform.position).normalized;
+            }
         }
         else if(state==States.Throw)
         {
@@ -82,7 +112,7 @@ public class Chief : MonoBehaviour
             if(throwRotation>330f)
                 UpdateState();
             else
-                throwRotation+=Time.smoothDeltaTime*50f;
+                throwRotation+=Time.smoothDeltaTime*100f;
         }
         else if(state==States.Throw2)
         {
@@ -92,11 +122,11 @@ public class Chief : MonoBehaviour
                 throwPos.x = cameraSupport.GetWorldBound().min.x + cameraSupport.GetWorldBound().size.x*0.1f+Random.value * cameraSupport.GetWorldBound().size.x*0.8f;
                 throwPos.y = cameraSupport.GetWorldBound().min.y + cameraSupport.GetWorldBound().size.y*0.1f+Random.value * cameraSupport.GetWorldBound().size.y*0.8f;
                 throwPos.z=0f;
-                for(int j=0;j<12;j++)
+                for(int j=0;j<8;j++)
                 {
                     GameObject banana = Instantiate(Resources.Load("Prefabs/Banana") as GameObject);
                     banana.transform.position = throwPos;
-                    banana.transform.rotation = Quaternion.Euler(0f,0f,j*30f);
+                    banana.transform.rotation = Quaternion.Euler(0f,0f,j*45f);
                 }
             }
             UpdateState();
@@ -140,8 +170,11 @@ public class Chief : MonoBehaviour
 
     void toThrust()
     {
-        direction=(player.transform.position-transform.position).normalized;
-        speed=30f;
+        if(Random.value>0.5)
+            direction=(player1.transform.position-transform.position).normalized;
+        else
+            direction=(player2.transform.position-transform.position).normalized;
+        speed=25f;
         state=States.Thrust;
     }
     void toThrow()
