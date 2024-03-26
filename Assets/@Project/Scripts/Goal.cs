@@ -45,7 +45,7 @@ public class Goal : MonoBehaviour
 				if(m_goalCount == 0)
 				{
 					// 加载下一个场景
-					SceneManager.LoadScene("StartScene");
+					SceneManager.LoadScene("Stage2");
 				}
 			}
 		}

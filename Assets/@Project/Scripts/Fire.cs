@@ -18,4 +18,11 @@ public class Fire : MonoBehaviour
 			player.Dead();
 		}
 	}
+
+	public void Off()
+	{
+		fireOn = false;
+		Animator animator = GetComponent<Animator>();
+		animator.Play("Off");
+	}
 }
