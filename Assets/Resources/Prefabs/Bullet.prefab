@@ -50,8 +50,6 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -78,7 +76,7 @@ SpriteRenderer:
   m_SortingOrder: 2
   m_Sprite: {fileID: 2208703988740019828, guid: 1e36e34743f91485795857062ec0df9e,
     type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.8050314, g: 0.5847869, b: 0.5847869, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

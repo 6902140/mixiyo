@@ -61,7 +61,7 @@ public class Chief : MonoBehaviour
             player2.GetComponent<Player>().Hit();
         if(state==States.Idle)
         {
-            if(Time.time-stateTimer>5f)
+            if(Time.time-stateTimer>8f)
                 UpdateState();
             transform.position += Time.smoothDeltaTime * speed * direction;
             if(direction.x>=0f)
@@ -88,6 +88,9 @@ public class Chief : MonoBehaviour
             CameraSupport.WorldBoundStatus status = cameraSupport.CollideWorldBound(myBound);
             if (status != CameraSupport.WorldBoundStatus.Inside)
             {
+                var cameraShake = FindObjectOfType<CameraShaker>();
+                // 使用 CameraShaker 震动相机
+                cameraShake.Shake();
                 if(Random.value>0.5)
                     direction = (player1.transform.position - transform.position).normalized;
                 else
@@ -171,7 +174,7 @@ public class Chief : MonoBehaviour
             direction=(player1.transform.position-transform.position).normalized;
         else
             direction=(player2.transform.position-transform.position).normalized;
-        speed=30f;
+        speed=25f;
         state=States.Thrust;
     }
     void toThrow()
