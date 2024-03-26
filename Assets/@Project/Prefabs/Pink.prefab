@@ -126,6 +126,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6820004337991441212, guid: 0685b67e501acc44bbc45360fd793738,
         type: 3}
+      propertyPath: numOfAirJumps
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6820004337991441212, guid: 0685b67e501acc44bbc45360fd793738,
+        type: 3}
       propertyPath: staticEnvLayerMask.m_Bits
       value: 768
       objectReference: {fileID: 0}
