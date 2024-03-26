@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 1750691241156169851}
   - component: {fileID: 3568337828123158452}
   - component: {fileID: 331467997937107398}
-  - component: {fileID: 4089982687334308635}
+  - component: {fileID: 6436211567457428170}
   m_Layer: 8
-  m_Name: Door
+  m_Name: Obstacle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -154,7 +154,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.7050604, y: 1.6197062}
   m_EdgeRadius: 0
---- !u!114 &4089982687334308635
+--- !u!114 &6436211567457428170
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

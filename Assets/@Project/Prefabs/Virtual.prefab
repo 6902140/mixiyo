@@ -124,10 +124,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Virtual
       objectReference: {fileID: 0}
-    - target: {fileID: 6820004337991441212, guid: 0685b67e501acc44bbc45360fd793738,
+    - target: {fileID: 6820004337988320350, guid: 0685b67e501acc44bbc45360fd793738,
         type: 3}
-      propertyPath: numOfAirJumps
-      value: 0
+      propertyPath: m_Size.y
+      value: 1.5385349
+      objectReference: {fileID: 0}
+    - target: {fileID: 6820004337988320350, guid: 0685b67e501acc44bbc45360fd793738,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: -0.18073261
       objectReference: {fileID: 0}
     - target: {fileID: 6820004337991441212, guid: 0685b67e501acc44bbc45360fd793738,
         type: 3}
