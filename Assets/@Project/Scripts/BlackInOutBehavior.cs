@@ -22,6 +22,11 @@ public class BlackInOutBehavior : MonoBehaviour
         }
     }
 
+    public void nextScene()
+    {
+        StartCoroutine(FadeOut());
+    }
+
     IEnumerator FadeIn()
     {
         alpha = 1;
