@@ -17,8 +17,8 @@ public class Arrow : MonoBehaviour
 		{
             var player = other.GetComponent<Player>();
             var motor = player.GetComponent<PlatformerMotor2D>();
-            if(motor.numOfAirJumps != 0)
-                return;
+            // if(motor.numOfAirJumps != 0)
+            //     return;
 
 			// 创建获取特效对象
 			var collected = Instantiate(
@@ -46,7 +46,7 @@ public class Arrow : MonoBehaviour
 			var audioSource = FindObjectOfType<AudioSource>();
 			audioSource.PlayOneShot(m_collectedClip);
 
-            motor.numOfAirJumps = 1;
+            motor.numOfAirJumps += 1;
 		}
 	}
 }
