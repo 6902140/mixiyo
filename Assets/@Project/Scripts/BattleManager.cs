@@ -13,6 +13,8 @@ public class BattleManager : MonoBehaviour
     float timerOrange;
     bool timerAppleBegin;
     bool timerOrangeBegin;
+
+    private float timet = 3.0f;
     void Start()
     {
         player1=GameObject.Find("Player1");
@@ -48,7 +50,7 @@ public class BattleManager : MonoBehaviour
             timerOrangeBegin=true;
             timerOrange=Time.time;
         }
-        if(!apple&&Time.time-timerApple>5f&&timerAppleBegin)
+        if(!apple&&Time.time-timerApple>timet&&timerAppleBegin)
         {
             apple=Instantiate(Resources.Load("Prefabs/Apple") as GameObject);
             Vector3 applePos=new Vector3();
@@ -58,7 +60,7 @@ public class BattleManager : MonoBehaviour
             apple.transform.position=applePos;
             timerAppleBegin=false;
         }
-        if(!orange&&Time.time-timerOrange>5f&&timerOrangeBegin)
+        if(!orange&&Time.time-timerOrange>timet&&timerOrangeBegin)
         {
             orange=Instantiate(Resources.Load("Prefabs/Orange") as GameObject);
             Vector3 orangePos=new Vector3();

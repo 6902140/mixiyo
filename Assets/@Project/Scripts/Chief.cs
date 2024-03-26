@@ -28,7 +28,7 @@ public class Chief : MonoBehaviour
     public Slider slider;
     public void Hit()
     {
-        health-=0.05f;
+        health-=0.1f;
         slider.value=health;
         if(health<=0f)
         {
