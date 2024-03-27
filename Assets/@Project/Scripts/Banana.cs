@@ -21,9 +21,9 @@ public class Banana : MonoBehaviour
             Destroy(gameObject);
         if(player2.GetComponent<Player>().dead)
             Destroy(gameObject);
-        if(Vector3.Distance(player1.transform.position,transform.position)<0.8f)
+        if(Vector3.Distance(player1.transform.position,transform.position)<1f)
             player1.GetComponent<Player>().Hit();
-        if(Vector3.Distance(player2.transform.position,transform.position)<0.8f)
+        if(Vector3.Distance(player2.transform.position,transform.position)<1f)
             player2.GetComponent<Player>().Hit();
         transform.position += Time.smoothDeltaTime * speed * transform.up.normalized;
         Bounds myBound = GetComponent<Renderer>().bounds;
