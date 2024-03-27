@@ -120,3 +120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 451fcfb5ff8b340529a4a3aafa3db1b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_hitPrefab: {fileID: 1707028830426106115, guid: 1506c720fa3f9436683dae19ba64b5cc,
+    type: 3}
+  m_hitClip: {fileID: 0}
+  m_bulletPrefab: {fileID: 0}

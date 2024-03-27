@@ -22,9 +22,15 @@ public class Blue : MonoBehaviour
     {
         if (other.name.Contains("Player"))
         {
-            door1.GetComponent<Door>().Open();
-            door2.GetComponent<Door>().Open();
-            door3.GetComponent<Door>().Open();
+            if(door1 != null){
+                door1.GetComponent<Door>().Open();
+            }
+            if(door2 != null){
+                door2.GetComponent<Door>().Open();
+            }
+            if(door3 != null){
+                door3.GetComponent<Door>().Open();
+            }
             var audioSource = FindObjectOfType<AudioSource>();
             audioSource.PlayOneShot(flagClip);
             Destroy(gameObject);

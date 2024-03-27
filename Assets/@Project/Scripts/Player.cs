@@ -85,6 +85,12 @@ public class Player : MonoBehaviour
 		healthBar.SetValue(health*1.0f/maxHealth);
 	}
 
+	public void FullHealth()
+	{
+		health = maxHealth;
+		healthBar.SetValue(health*1.0f/maxHealth);
+	}
+
 	// 在重新开始游戏时调用的函数
 	private void OnRetry()
 	{

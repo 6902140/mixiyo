@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 9211383817860566230}
   - component: {fileID: 8500849890198138917}
   - component: {fileID: 6839387799216701184}
-  - component: {fileID: 4618594441770547090}
+  - component: {fileID: 6982171427785625184}
   - component: {fileID: 3036416077778695598}
   m_Layer: 0
   m_Name: Melon
@@ -109,7 +109,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &4618594441770547090
+--- !u!114 &6982171427785625184
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -118,7 +118,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3068024822822352997}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c15563962bd3a0649a0965e767e3e730, type: 3}
+  m_Script: {fileID: 11500000, guid: c5f6bb7374c594da2a76864dd95635a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_collectedPrefab: {fileID: 7298088663341141613, guid: 0244c8918b4947c489d08b9d9171745a,
