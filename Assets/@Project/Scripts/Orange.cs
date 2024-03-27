@@ -27,9 +27,9 @@ public class Orange : MonoBehaviour
             Destroy(gameObject);
         if(player2.GetComponent<Player>().dead)
             Destroy(gameObject);
-        if(Vector3.Distance(player1.transform.position,transform.position)<0.8f)
+        if(Vector3.Distance(player1.transform.position,transform.position)<0.9f)
             state=States.Attack;
-        if(Vector3.Distance(player2.transform.position,transform.position)<0.8f)
+        if(Vector3.Distance(player2.transform.position,transform.position)<0.9f)
             state=States.Attack;
         if(state==States.Idle)
             transform.Rotate(Vector3.forward, 300f * Time.smoothDeltaTime);

@@ -18,7 +18,8 @@ public class Goal : MonoBehaviour
 	{
 		if (Input.GetKeyDown(KeyCode.O))
 		{
-			blackInOut.NextScene();
+			// blackInOut.NextScene();
+			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 		}
 	}
 
@@ -57,7 +58,8 @@ public class Goal : MonoBehaviour
 					isfinished = true;
 					// 加载下一个场景
 					m_goalCount = 2;
-					blackInOut.NextScene();
+					// blackInOut.NextScene();
+					SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 				}
 			}
 		}
