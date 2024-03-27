@@ -30,6 +30,7 @@ public class Player : MonoBehaviour
 	void Start()
 	{
 		healthBar.SetValue(health*1.0f/maxHealth);
+		healthBar.SetRatio(health, maxHealth);
 		timer = Time.time;
 	}
 	// 玩家受伤时调用的函数
@@ -58,6 +59,7 @@ public class Player : MonoBehaviour
 
 		health--;
 		healthBar.SetValue(health*1.0f/maxHealth);
+		healthBar.SetRatio(health, maxHealth);
 		if(health <= 0)
 		{
 			dead=true;
@@ -83,12 +85,20 @@ public class Player : MonoBehaviour
 		}
 		health++;
 		healthBar.SetValue(health*1.0f/maxHealth);
+		healthBar.SetRatio(health, maxHealth);
+	}
+
+	public void addMaxHealth(){
+		maxHealth ++;
+		healthBar.SetValue(health*1.0f/maxHealth);
+		healthBar.SetRatio(health, maxHealth);
 	}
 
 	public void FullHealth()
 	{
 		health = maxHealth;
 		healthBar.SetValue(health*1.0f/maxHealth);
+		healthBar.SetRatio(health, maxHealth);
 	}
 
 	// 在重新开始游戏时调用的函数
