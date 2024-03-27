@@ -12,6 +12,10 @@ public class Cherry : MonoBehaviour
 
     public GameObject player1, player2;
 
+	void Update(){
+
+	}
+
 	// 当与其他对象发生碰撞时调用的函数
 	private void OnTriggerEnter2D(Collider2D other)
 	{
@@ -38,7 +42,9 @@ public class Cherry : MonoBehaviour
 			Destroy(collected, time);
 
 			// 销毁自身对象
-			Destroy(gameObject);
+			// Destroy(gameObject);
+			if (gameObject.activeSelf)
+				gameObject.SetActive(false);
 
 			// 播放获取水果的音效
 			var audioSource = FindObjectOfType<AudioSource>();
@@ -50,6 +56,15 @@ public class Cherry : MonoBehaviour
             else{
                 player1.GetComponent<Player>().addHealth();
             }
+		}
+	}
+
+	public void Reset()
+	{
+		float distance1 = Vector2.Distance(player1.transform.position, transform.position);
+		float distance2 = Vector2.Distance(player2.transform.position, transform.position);
+		if (!gameObject.activeSelf && distance1 > 20.0f && distance2 > 20.0f){
+			gameObject.SetActive(true);
 		}
 	}
 }
