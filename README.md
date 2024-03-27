@@ -106,8 +106,8 @@ boss技能说明：
 
 ### part3 鸣谢：
 
-- 指导老师： [Mr.Kelvin Sung, Professor](https://www.uwb.edu/stem/faculty/css-faculty/ksung)
+- 指导老师：[Mr.Kelvin Sung, Professor](https://www.uwb.edu/stem/faculty/css-faculty/ksung)
 
-- 素材来源：https://otologic.jp/
+- 素材来源：[pixel-adventure-1](https://pixelfrog-assets.itch.io/pixel-adventure-1), [pixel-adventure-2](https://pixelfrog-assets.itch.io/pixel-adventure-2), [BGM](https://otologic.jp/), [techbook-unity-2d-action-game](https://github.com/baba-s/techbook-unity-2d-action-game)
 
 - 创意来源：[森林冰火人](https://www.i-gamer.net/site/3086.html) , [冰与火之舞](https://store.steampowered.com/app/977950/_A_Dance_of_Fire_and_Ice/?l=schinese)
