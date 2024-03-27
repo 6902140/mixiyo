@@ -8,6 +8,7 @@ public class BlackInOutBehavior : MonoBehaviour
 {
     public Image image;
     bool isReady = false;
+    bool startFadeOut = false;
     [SerializeField] float alpha;
 
     void Start()
@@ -18,13 +19,16 @@ public class BlackInOutBehavior : MonoBehaviour
     void Update()
     {
         if (isReady && Input.anyKeyDown){
-            StartCoroutine(FadeOut());
+            NextScene();
         }
     }
 
-    public void nextScene()
+    public void NextScene()
     {
-        StartCoroutine(FadeOut());
+        if (!startFadeOut){
+            startFadeOut = true;
+            StartCoroutine(FadeOut());
+        }
     }
 
     IEnumerator FadeIn()

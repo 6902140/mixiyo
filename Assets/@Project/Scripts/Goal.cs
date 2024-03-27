@@ -6,6 +6,8 @@ public class Goal : MonoBehaviour
 {
 	// 目标完成时播放的音效
 	public AudioClip m_goalClip;
+	public BlackInOut blackInOut;
+	static bool isfinished = false;
 
 	// 是否完成目标
 	private bool m_isGoal;
@@ -16,7 +18,7 @@ public class Goal : MonoBehaviour
 	{
 		if (Input.GetKeyDown(KeyCode.O))
 		{
-			SceneManager.LoadScene((SceneManager.GetActiveScene().buildIndex + 1)%4);
+			blackInOut.NextScene();
 		}
 	}
 
@@ -50,11 +52,12 @@ public class Goal : MonoBehaviour
 
 				m_goalCount--;
 
-				if(m_goalCount == 0)
+				if(m_goalCount == 0 && !isfinished)
 				{
+					isfinished = true;
 					// 加载下一个场景
 					m_goalCount = 2;
-					SceneManager.LoadScene((SceneManager.GetActiveScene().buildIndex + 1)%4);
+					blackInOut.NextScene();
 				}
 			}
 		}
